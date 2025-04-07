@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FutureBlitz Wallpapers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-drag: none;
+      -webkit-touch-callout: none;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+      padding: 2rem;
+      overflow-x: hidden;
+    }
+
+    .glitch {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      animation: flicker 2s infinite;
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+    }
+
+    .glitch::before {
+      animation: glitchTop 2s infinite;
+      color: #f0f;
+      z-index: -1;
+    }
+
+    .glitch::after {
+      animation: glitchBottom 2s infinite;
+      color: #0ff;
+      z-index: -2;
+    }
+
+    @keyframes glitchTop {
+      0%, 100% { transform: translate(0, 0); }
+      20% { transform: translate(-2px, -2px); }
+      40% { transform: translate(-1px, 2px); }
+      60% { transform: translate(1px, -1px); }
+      80% { transform: translate(2px, 1px); }
+    }
+
+    @keyframes glitchBottom {
+      0%, 100% { transform: translate(0, 0); }
+      20% { transform: translate(2px, 2px); }
+      40% { transform: translate(1px, -2px); }
+      60% { transform: translate(-1px, 1px); }
+      80% { transform: translate(-2px, -1px); }
+    }
+
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+      }
+      20%, 22%, 24%, 55% {
+        opacity: 0.3;
+      }
+    }
+
+    h2 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.7rem;
+      color: #0ff;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .price {
+      color: #ff0055;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .wallpaper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .wallpaper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      pointer-events: none;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      font-size: 20px;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.5);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .buy-btn {
+      display: block;
+      background: #ff0055;
+      color: #fff;
+      text-align: center;
+      padding: 8px 12px;
+      margin-top: 6px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .buy-btn:hover {
+      background: #e0004c;
+    }
+
+    .buy-pack {
+      text-align: center;
+      margin: 3rem 0 1rem;
+    }
+
+    .buy-pack .buy-btn {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+
+    .whatsapp {
+      text-align: center;
+      margin-top: 1rem;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .glitch {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <script>
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      alert("Buy the pack to download. Visit: https://selar.co/your-selar-link or contact on WhatsApp: +2347079434802");
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'PrintScreen') {
+        alert("Screenshot is disabled. Buy at https://selar.com/hba8j0");
+        navigator.clipboard.writeText("");
+      }
+    });
+
+    document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+  </script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+<body>
+  <div>
+    <div class="glitch" data-text="FutureBlitz Wallpapers">FutureBlitz Wallpapers</div>
+    <h2>anime_fz1 pack</h2>
+    <div class="price">Price: NGN500 / $1</div>
+  </div>
+
+  <div class="gallery">
+    <!-- REPEAT BLOCK FOR EACH WALLPAPER -->
+    <!-- g1.png to g10.png -->
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g1.png" alt="Wallpaper 1" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g2.png" alt="Wallpaper 2" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g3.png" alt="Wallpaper 3" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g4.png" alt="Wallpaper 4" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g5.png" alt="Wallpaper 5" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g6.png" alt="Wallpaper 6" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g7.png" alt="Wallpaper 7" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g8.png" alt="Wallpaper 8" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g9.png" alt="Wallpaper 9" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g10.png" alt="Wallpaper 10" />
+      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    </div>
+  </div>
+
+  <div class="buy-pack">
+    <a class="buy-btn" href="https://selar.com/hba8j0">Buy the Pack</a>
+  </div>
+
+  <div class="whatsapp">
+    For inquiries, contact me on WhatsApp: <strong>+2347079434802</strong>
+  </div>
+</body>
+</html>
