@@ -4,185 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FutureBlitz Wallpapers</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      user-select: none;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #060606;
-      color: #fff;
-      padding: 2rem;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Animated Star Background */
-    body::before {
-      content: '';
-      position: fixed;
-      width: 200%;
-      height: 200%;
-      top: -50%;
-      left: -50%;
-      background: radial-gradient(white 1px, transparent 1px);
-      background-size: 30px 30px;
-      opacity: 0.05;
-      animation: stars 10s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes stars {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
-    }
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 1rem;
-      z-index: 1;
-      position: relative;
-    }
-
-    .header img {
-      height: 50px;
-      width: 50px;
-      border-radius: 10px;
-    }
-
-    .glitch {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #fff;
-      animation: flicker 2s infinite;
-    }
-
-    @keyframes flicker {
-      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-        opacity: 1;
-      }
-      20%, 22%, 24%, 55% {
-        opacity: 0.4;
-      }
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      color: #0ff;
-      animation: pulse 2s infinite;
-      text-align: center;
-      margin: 1rem 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.8; }
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      z-index: 1;
-      position: relative;
-    }
-
-    .wallpaper {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-      border: 2px solid transparent;
-      animation: electric 3s infinite linear;
-    }
-
-    @keyframes electric {
-      0% { border-color: #0ff; box-shadow: 0 0 10px #0ff; }
-      50% { border-color: #f0f; box-shadow: 0 0 20px #f0f; }
-      100% { border-color: #0ff; box-shadow: 0 0 10px #0ff; }
-    }
-
-    .wallpaper img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .watermark {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 30px;
-      font-weight: 900;
-      color: rgba(255, 255, 255, 0.4);
-      pointer-events: none;
-      z-index: 2;
-      text-shadow: 1px 1px 4px #000;
-    }
-
-    .download-btn {
-      display: block;
-      background: linear-gradient(to right, #00f0ff, #ff00e0);
-      color: #000;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px;
-      font-size: 14px;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 14px;
-      color: #aaa;
-    }
-
-    @media (max-width: 500px) {
-      .gallery {
-        grid-template-columns: 1fr;
-      }
-
-      .glitch {
-        font-size: 2rem;
-      }
-
-      .watermark {
-        font-size: 24px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="header">
-    <img src="logo.png" alt="FutureBlitz Logo" />
-    <div class="glitch">FutureBlitz Wallpapers</div>
+  <div class="animated-bg">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
   </div>
 
-  <h2>anime_fz1 pack - Free</h2>
+  <header class="header">
+    <img src="logo.png" alt="Logo" class="logo" />
+    <h1 class="glitch" data-text="FutureBlitz Wallpapers">FutureBlitz Wallpapers</h1>
+  </header>
 
-  <div class="gallery">
-    <!-- Grid wallpapers with larger watermark and download -->
-    <!-- Repeat 10 cards -->
-    ${[...Array(10)].map((_, i) => `
-      <div class="wallpaper">
-        <div class="watermark">FZ</div>
-        <img src="g${i + 1}.png" alt="Wallpaper ${i + 1}" />
-        <a class="download-btn" href="g${i + 1}.png" download>Download for Free</a>
-      </div>
-    `).join('')}
-  </div>
+  <main class="gallery">
+    <!-- Repeat for all 10 images -->
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g1.png" alt="Wallpaper 1">
+      <a href="g1.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g2.png" alt="Wallpaper 2">
+      <a href="g2.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g3.png" alt="Wallpaper 3">
+      <a href="g3.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g4.png" alt="Wallpaper 4">
+      <a href="g4.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g5.png" alt="Wallpaper 5">
+      <a href="g5.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g6.png" alt="Wallpaper 6">
+      <a href="g6.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g7.png" alt="Wallpaper 7">
+      <a href="g7.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g8.png" alt="Wallpaper 8">
+      <a href="g8.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g9.png" alt="Wallpaper 9">
+      <a href="g9.png" download class="download-btn">Download for Free</a>
+    </div>
+    <div class="wallpaper">
+      <div class="watermark">FZ</div>
+      <img src="g10.png" alt="Wallpaper 10">
+      <a href="g10.png" download class="download-btn">Download for Free</a>
+    </div>
+  </main>
 
-  <div class="footer">
-    Powered by FutureBlitz | Contact: +2347079434802
-  </div>
+  <script src="script.js"></script>
 </body>
 </html>
