@@ -16,10 +16,37 @@
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: #0e0e0e;
+      background: #121212;
       color: #fff;
       padding: 2rem;
       overflow-x: hidden;
+      font-size: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #fff;
+      position: relative;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .logo {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+      vertical-align: middle;
     }
 
     .glitch {
@@ -99,8 +126,9 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
+      animation: fadeInGrid 2s ease-out;
     }
 
     .wallpaper {
@@ -108,6 +136,11 @@
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .wallpaper:hover {
+      transform: scale(1.05);
     }
 
     .wallpaper img {
@@ -119,13 +152,14 @@
 
     .watermark {
       position: absolute;
-      top: 8px;
-      left: 8px;
-      font-size: 20px;
+      top: 10px;
+      left: 10px;
+      font-size: 30px;
       font-weight: 900;
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.7);
       pointer-events: none;
       z-index: 2;
+      transform: rotate(-15deg);
     }
 
     .buy-btn {
@@ -146,16 +180,6 @@
       background: #e0004c;
     }
 
-    .buy-pack {
-      text-align: center;
-      margin: 3rem 0 1rem;
-    }
-
-    .buy-pack .buy-btn {
-      font-size: 16px;
-      padding: 10px 20px;
-    }
-
     .whatsapp {
       text-align: center;
       margin-top: 1rem;
@@ -163,96 +187,87 @@
       font-size: 14px;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
       .glitch {
         font-size: 2rem;
       }
     }
-  </style>
-  <script>
-    document.addEventListener('contextmenu', function(e) {
-      e.preventDefault();
-      alert("Buy the pack to download. Visit: https://selar.co/your-selar-link or contact on WhatsApp: +2347079434802");
-    });
 
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'PrintScreen') {
-        alert("Screenshot is disabled. Buy at https://selar.com/hba8j0");
-        navigator.clipboard.writeText("");
+    @keyframes fadeInGrid {
+      0% {
+        opacity: 0;
       }
-    });
-
-    document.addEventListener('gesturestart', function(e) {
-      e.preventDefault();
-    });
-  </script>
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 <body>
   <div>
-    <div class="glitch" data-text="FutureBlitz Wallpapers">FutureBlitz Wallpapers</div>
-    <h2>anime_fz1 pack</h2>
+    <h1>
+      <img src="logo.png" alt="Logo" class="logo" /> <span class="glitch" data-text="FutureBlitz Wallpapers">FutureBlitz Wallpapers</span>
+    </h1>
+
+    <h2>Anime FZ1 Pack</h2>
     <div class="price">Price: NGN500 / $1</div>
-  </div>
 
-  <div class="gallery">
-    <!-- REPEAT BLOCK FOR EACH WALLPAPER -->
-    <!-- g1.png to g10.png -->
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g1.png" alt="Wallpaper 1" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
+    <div class="gallery">
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g1.png" alt="Wallpaper 1" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g2.png" alt="Wallpaper 2" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g3.png" alt="Wallpaper 3" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g4.png" alt="Wallpaper 4" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g5.png" alt="Wallpaper 5" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g6.png" alt="Wallpaper 6" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g7.png" alt="Wallpaper 7" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g8.png" alt="Wallpaper 8" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g9.png" alt="Wallpaper 9" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
+      <div class="wallpaper">
+        <div class="watermark">FZ</div>
+        <img src="g10.png" alt="Wallpaper 10" />
+        <a class="buy-btn" href="#">Download for Free</a>
+      </div>
     </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g2.png" alt="Wallpaper 2" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g3.png" alt="Wallpaper 3" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g4.png" alt="Wallpaper 4" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g5.png" alt="Wallpaper 5" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g6.png" alt="Wallpaper 6" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g7.png" alt="Wallpaper 7" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g8.png" alt="Wallpaper 8" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g9.png" alt="Wallpaper 9" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-    <div class="wallpaper">
-      <div class="watermark">FZ</div>
-      <img src="g10.png" alt="Wallpaper 10" />
-      <a class="buy-btn" href="https://selar.com/hba8j0">Buy</a>
-    </div>
-  </div>
-
-  <div class="buy-pack">
-    <a class="buy-btn" href="https://selar.com/hba8j0">Buy the Pack</a>
   </div>
 
   <div class="whatsapp">
